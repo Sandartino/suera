@@ -1,0 +1,8 @@
+div.genre-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+button.btn.btn-sm{
+  color:white;
+}

@@ -1,0 +1,19 @@
+<div class="row">
+  <h1>Жанр</h1>
+  <h5>Кликнете на един или повече жанрове за да ги изберете</h5>
+
+  <div class="genre-buttons">
+    <button type="button" class="btn btn-sm"
+            selectGenre
+            (selectedGenre)="onSelect($event)"
+            *ngFor="let genre of genres"
+            [attr.data-genre]="genre.title">
+            {{genre.title}} &nbsp;
+            <img src="./assets/img/cross.png">
+    </button>
+  </div>
+
+</div>
+
+<result [books]="books"></result>
+
