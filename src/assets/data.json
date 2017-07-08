@@ -1,48 +1,48 @@
 {
     "Фентъзи":[
-      {"price":101, "rate":1},
-      {"price":202, "rate":2},
-      {"price":53, "rate":0},
-      {"price":24, "rate":4},
+      {"price":101, "rate":0},
+      {"price":202, "rate":0},
+      {"price":53, "rate":1},
+      {"price":24, "rate":3},
       {"price":135, "rate":3}
     ],
     "Драма":[
       {"price":16, "rate":1},
       {"price":107, "rate":2},
-      {"price":48, "rate":0},
+      {"price":48, "rate":1},
       {"price":19, "rate":3}
     ],
     "Трилър":[
       {"price":10, "rate":1},
       {"price":100, "rate":2},
-      {"price":40, "rate":0},
+      {"price":40, "rate":1},
       {"price":10, "rate":3},
       {"price":90, "rate":5}
     ],
     "Романи":[
       {"price":10, "rate":1},
       {"price":100, "rate":2},
-      {"price":40, "rate":0},
+      {"price":40, "rate":1},
       {"price":10, "rate":3},
       {"price":90, "rate":5}
     ],
     "Художествена лит.":[
       {"price":10, "rate":1},
       {"price":100, "rate":2},
-      {"price":40, "rate":0},
+      {"price":40, "rate":1},
       {"price":10, "rate":3},
       {"price":90, "rate":5}
     ],
     "Исторически":[
       {"price":10, "rate":1},
       {"price":100, "rate":2},
-      {"price":40, "rate":0},
+      {"price":40, "rate":1},
       {"price":10, "rate":3},
       {"price":90, "rate":5}
     ],
     "Научна лит.":[
       {"price":10, "rate":1},
       {"price":100, "rate":2},
-      {"price":40, "rate":0}
+      {"price":40, "rate":1}
     ]
 }

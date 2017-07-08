@@ -1,6 +1,11 @@
-<div class="row">
+<div>
   <h1>Резултати</h1>
 
-  <img *ngFor="let book of books" src="./assets/img/Фентъзи.gif" style="border: 1px solid black">
-  <p></p>
+  <div class="img-container">
+    <div *ngFor="let book of books">
+      <img  src="http://via.placeholder.com/130x140">
+      <p>Цена:{{book.price}} Рейтинг:{{book.rate}}</p>
+    </div>
+  </div>
+
 </div>
