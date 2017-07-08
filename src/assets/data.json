@@ -1,16 +1,16 @@
 {
     "Фентъзи":[
-      {"price":101, "rate":0},
-      {"price":202, "rate":0},
-      {"price":53, "rate":1},
+      {"price":101, "rate":1},
+      {"price":202, "rate":1},
+      {"price":53, "rate":2},
       {"price":24, "rate":3},
       {"price":135, "rate":3}
     ],
     "Драма":[
-      {"price":16, "rate":1},
-      {"price":107, "rate":2},
-      {"price":48, "rate":1},
-      {"price":19, "rate":3}
+      {"price":16, "rate":4},
+      {"price":107, "rate":4},
+      {"price":48, "rate":4},
+      {"price":19, "rate":5}
     ],
     "Трилър":[
       {"price":10, "rate":1},

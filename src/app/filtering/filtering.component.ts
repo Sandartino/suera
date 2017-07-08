@@ -12,9 +12,9 @@ export class FilteringComponent {
   selectedGenre = [];
   // imageUrl:string;
   books = [];
-  booksBackUp = [];
+  booksResult = [];
   rate: string;
-  previousRate:number;
+  previousRate: number;
   rateIsClicked: boolean = false;
 
   constructor(private dataServices: DataService) {
@@ -38,55 +38,46 @@ export class FilteringComponent {
       this.selectedGenre.push(value);
     }
 
+    //this.books = [];
+    this.booksResult = [];
+  }
+
+  rateFilter(element) {
+    this.rateIsClicked = true;
+    this.rate = element.getAttribute("data-rate");
+  }
+
+  result() {
     this.dataServices.getJSON().subscribe(
       obj => {
         let toArray = [];
-
         for (let key in obj) {
-          if (obj.hasOwnProperty(key)) {
-            if (this.selectedGenre.includes(key)) {
-              toArray.push(obj[key]);
-            }
+          if (this.selectedGenre.includes(key)) {
+            toArray.push(obj[key]);
           }
         }
 
         for (let i = 0; i < toArray.length; i++) {
           for (let k = 0; k < toArray[i].length; k++) {
             if (this.rateIsClicked) {
-              if (toArray[i][k]["rate"] === +this.rate) {
-                this.books.push(toArray[i][k])
-              }
+              let rate = +this.rate;
+              this.booksResult = this.books.filter(function (obj) {
+                return obj.rate == rate;
+              });
+
             } else {
-              this.books.push(toArray[i][k])
+              this.books.push(toArray[i][k]);
+              this.booksResult.push(toArray[i][k]);
             }
           }
         }
 
+
       }
     );
-    this.booksBackUp = this.books.slice();
-    console.log(this.booksBackUp)
-    this.books = [];
+
+    //return this.booksResult
   }
 
-  rateFilter(element) {
-    this.rateIsClicked = true;
-    this.rate = element.getAttribute("data-rate");
-
-    if(this.previousRate !== +this.rate){
-      this.previousRate = +this.rate;
-    }
-    // console.log(this.books)
-    // this.books = this.booksBackUp.slice();
-    // console.log(this.books)
-
-    for (let i = 0; i < this.books.length; i++) {
-      if (this.books[i]["rate"] != +this.rate) {
-        this.books.splice(i, 1);
-        i--;
-      }
-    }
-
-  }
 
 }
