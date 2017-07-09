@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {DataService} from "../data.service";
+import {forEach} from "@angular/router/src/utils/collection";
 // import * as jQuery from './@types/jquery';
 //declare var jQuery:any;
 
@@ -11,11 +12,9 @@ import {DataService} from "../data.service";
 export class FilteringComponent {
   selectedGenre = [];
   // imageUrl:string;
-  books = [];
   booksResult = [];
-  rate: string;
-  previousRate: number;
-  rateIsClicked: boolean = false;
+  rate: number;
+  rateActive:boolean = false;
 
   constructor(private dataServices: DataService) {
   }
@@ -30,7 +29,7 @@ export class FilteringComponent {
     {title: 'Научна лит.'}
   ];
 
-  genreFilter(value) {
+  filter(value:string, rateActive:boolean) {
     let index = this.selectedGenre.indexOf(value);
     if (index > -1) {
       this.selectedGenre.splice(index, 1);
@@ -38,46 +37,23 @@ export class FilteringComponent {
       this.selectedGenre.push(value);
     }
 
-    //this.books = [];
-    this.booksResult = [];
+    this.dataServices.getJSON(this.selectedGenre, this.rateActive, this.rate).subscribe(
+      respond => this.booksResult = respond
+    )
+
   }
 
-  rateFilter(element) {
-    this.rateIsClicked = true;
-    this.rate = element.getAttribute("data-rate");
-  }
-
-  result() {
-    this.dataServices.getJSON().subscribe(
-      obj => {
-        let toArray = [];
-        for (let key in obj) {
-          if (this.selectedGenre.includes(key)) {
-            toArray.push(obj[key]);
-          }
-        }
-
-        for (let i = 0; i < toArray.length; i++) {
-          for (let k = 0; k < toArray[i].length; k++) {
-            if (this.rateIsClicked) {
-              let rate = +this.rate;
-              this.booksResult = this.books.filter(function (obj) {
-                return obj.rate == rate;
-              });
-
-            } else {
-              this.books.push(toArray[i][k]);
-              this.booksResult.push(toArray[i][k]);
-            }
-          }
-        }
-
-
+  getRate(element) {
+    this.rate = Number(element.getAttribute("data-rate"));
+    this.rateActive = true;
+    /*this.dataServices.getRate(rate, this.booksResult).subscribe(
+      respond => {
+        this.booksResult = respond;
       }
-    );
+    );*/
 
-    //return this.booksResult
   }
+
 
 
 }

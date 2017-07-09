@@ -12,25 +12,43 @@ export class DataService {
   constructor(private http: Http) {
   }
 
-  getJSON() {
+  getJSON(genre: string[], rateActive:boolean, rate:number) {
     return this.http.get('assets/data.json')
-      .map(respond => respond.json())
+      .map(respond => {
+        let respondArr = respond.json();
+        let sendData = [];
+
+        for (let element of respondArr) {
+          for (let i = 0; i < genre.length; i++) {
+
+            if (!rateActive && element["genre"] == genre[i]) {
+              sendData.push(element)
+            }
+
+            else if(rateActive && element["genre"] == genre[i] && element["rate"] == rate){
+              sendData.push(element)
+            }
+
+          }
+        }
+
+        return sendData;
+      })
   }
 
-  // getBooks(): Promise<any[]> {
-  //   var url="assets/proba.json";
-  //   let promise = new Promise((resolve, reject) => {
-  //     this.http.get(url).toPromise()
-  //       .then(
-  //         res => {
-  //           resolve(res.json().data);
-  //         },
-  //         err =>{
-  //           reject(alert('error in DataService'))
-  //         }
-  //       );
-  //   });
-  //   return promise;
-  // }
+  getRate(rate: number, books: object[]) {
+    /*return this.http.get('assets/data.json')
+      .map(respond => {
+        let respondArr = respond.json();
+        let sendData = [];
+
+        sendData = books.filter(function (e) {
+          return e["rate"] == rate;
+        });
+
+        return sendData
+      })*/
+  }
+
 
 }
