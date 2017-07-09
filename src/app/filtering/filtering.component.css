@@ -1,10 +1,28 @@
-div.genre-buttons {
-  display: flex;
-  justify-content: space-around;
+div.genre-buttons{
+  /*display: flex;
+ justify-content: space-around;*/
+  padding-bottom: 22px;
+}
+
+div.genre-buttons button{
+  margin-right: 10px;
+  margin-top: 10px;
 }
 
 button.btn.btn-sm{
   color:white;
+}
+
+div.gap{
+  margin:10px!important;
+  padding:10px!important;
+}
+
+#amountMin, #amountMax{
+  border:0;
+  color: #54a754;
+  font-weight:bold;
+  background-color: inherit;
 }
 
 /*STARS REITING*/

@@ -1,10 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Http, Response}  from '@angular/http';
+import {Http}       from '@angular/http';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/toPromise';
-// import 'rxjs/Rx';
 
 @Injectable()
 export class DataService {
@@ -12,7 +8,7 @@ export class DataService {
   constructor(private http: Http) {
   }
 
-  getJSON(genre: string[], rateActive:boolean, rate:number) {
+  getJSON(genre: string[], rate: number, price: number[], rateActive: boolean, priceActive: boolean) {
     return this.http.get('assets/data.json')
       .map(respond => {
         let respondArr = respond.json();
@@ -21,12 +17,20 @@ export class DataService {
         for (let element of respondArr) {
           for (let i = 0; i < genre.length; i++) {
 
-            if (!rateActive && element["genre"] == genre[i]) {
+            if (!rateActive && !priceActive && element["genre"] == genre[i]) {
               sendData.push(element)
             }
 
-            else if(rateActive && element["genre"] == genre[i] && element["rate"] == rate){
+            else if (rateActive && !priceActive && element["genre"] == genre[i] && element["rate"] == rate) {
               sendData.push(element)
+            }
+
+            else if (priceActive) {
+              if (rateActive && element["genre"] == genre[i] && element["price"] >= price[0] && element["price"] <= price[1] && element["rate"] == rate) {
+                sendData.push(element)
+              } else if (!rateActive && element["genre"] == genre[i] && element["price"] >= price[0] && element["price"] <= price[1]) {
+                sendData.push(element)
+              }
             }
 
           }
@@ -35,20 +39,5 @@ export class DataService {
         return sendData;
       })
   }
-
-  getRate(rate: number, books: object[]) {
-    /*return this.http.get('assets/data.json')
-      .map(respond => {
-        let respondArr = respond.json();
-        let sendData = [];
-
-        sendData = books.filter(function (e) {
-          return e["rate"] == rate;
-        });
-
-        return sendData
-      })*/
-  }
-
 
 }

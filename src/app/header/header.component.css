@@ -2,3 +2,11 @@
   color: #3a3a3a;
   font-family: "Calibri Light";
 }
+
+.logo {
+  float: right;
+  margin-top: 5px;
+}
+hr{
+  border-top: 1px solid black;
+}

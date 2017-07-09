@@ -1,14 +1,14 @@
 [
-  {"price":101, "rate":1, "genre":"Фентъзи"},
-  {"price":202, "rate":1, "genre":"Фентъзи"},
-  {"price":53, "rate":2, "genre":"Фентъзи"},
-  {"price":24, "rate":2, "genre":"Фентъзи"},
-  {"price":135, "rate":2, "genre":"Фентъзи"},
+  {"price":20, "rate":1, "genre":"Фентъзи"},
+  {"price":50, "rate":1, "genre":"Фентъзи"},
+  {"price":50, "rate":2, "genre":"Фентъзи"},
+  {"price":100, "rate":2, "genre":"Фентъзи"},
+  {"price":150, "rate":2, "genre":"Фентъзи"},
 
-  {"price":16, "rate":4, "genre":"Драма"},
-  {"price":107, "rate":4, "genre":"Драма"},
-  {"price":48, "rate":4, "genre":"Драма"},
-  {"price":19, "rate":5, "genre":"Драма"},
+  {"price":55, "rate":4, "genre":"Драма"},
+  {"price":77, "rate":4, "genre":"Драма"},
+  {"price":88, "rate":4, "genre":"Драма"},
+  {"price":111, "rate":5, "genre":"Драма"},
 
   {"price":10, "rate":1, "genre":"Трилър"},
   {"price":100, "rate":2, "genre":"Трилър"},
