@@ -3,7 +3,18 @@ div.img-container div {
 }
 
 div.img-container img {
-  margin: 10px 10px 0 auto;
+  margin: 10px 12px 0 auto;
+}
+
+.result{
+  color: #3a3a3a;
+  font-family: "Calibri Light";
+  font-size: 16px;
+}
+
+.result span {
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .rating {

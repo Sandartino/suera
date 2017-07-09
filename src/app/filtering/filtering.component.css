@@ -1,29 +1,39 @@
-div.genre-buttons{
-  /*display: flex;
- justify-content: space-around;*/
+div.genre-buttons {
   padding-bottom: 22px;
 }
 
-div.genre-buttons button{
+div.genre-buttons button {
   margin-right: 10px;
   margin-top: 10px;
 }
 
-button.btn.btn-sm{
-  color:white;
+button.btn.btn-sm {
+  color: white;
 }
 
-div.gap{
-  margin:10px!important;
-  padding:10px!important;
+.gap-1 {
+  min-height: 185px
 }
 
-#amountMin, #amountMax{
-  border:0;
-  color: #54a754;
-  font-weight:bold;
+.gap-2 {
+  margin-left: 10px;
+  width: 49%;
+}
+
+.no-bg-color {
   background-color: inherit;
 }
+
+div.col-md-6 {
+  background-color: #EEEEEE;
+}
+
+#amountMin, #amountMax {
+  border: 0;
+  font-weight: bold;
+  background-color: inherit;
+}
+
 
 /*STARS REITING*/
 /*http://www.cssscript.com/simple-5-star-rating-system-with-css-and-html-radios/*/
@@ -32,7 +42,9 @@ div.stars {
   display: inline-block;
 }
 
-input.star { display: none; }
+input.star {
+  display: none;
+}
 
 label.star {
   float: right;
@@ -49,15 +61,27 @@ input.star:checked ~ label.star:before {
 }
 
 /*input.star-5:checked ~ label.star:before {*/
-  /*color: #FE7;*/
-  /*text-shadow: 0 0 20px #952;*/
+/*color: #FE7;*/
+/*text-shadow: 0 0 20px #952;*/
 /*}*/
 
-input.star-1:checked ~ label.star:before { color: #5CB85C; }
+input.star-1:checked ~ label.star:before {
+  color: #5CB85C;
+}
 
 /*label.star:hover { transform: rotate(-15deg) scale(1.3); }*/
 
 label.star:before {
   content: '\f006';
   font-family: FontAwesome;
+}
+
+@media (max-width: 1200px) {
+  .gap-1 {
+    height: auto;
+  }
+
+  .gap-2 {
+    margin-left: 0;
+  }
 }

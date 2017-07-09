@@ -1,11 +1,11 @@
 <div class="row">
+
   <div class="col-md-12">
-    <!--bad practise <h*>strong</h*>-->
     <h2><strong>Жанр</strong></h2>
     <hr class="hr">
     <h4>Кликнете на един или повече жанрове за да ги изберете</h4>
-
     <div class="genre-buttons">
+      <!--GENRES-->
       <button type="button" class="btn btn-sm"
               selectGenre
               (selectedGenre)="filter($event)"
@@ -14,28 +14,28 @@
         {{genre.title}} &nbsp;
         <img src="./assets/img/cross.png">
       </button>
+      <!--GENRES-->
     </div>
   </div>
+
 </div>
 
-<div class="row">
+<div class="row no-bg-color">
 
-  <div class="col-md-6">
-    <div class="gap">
+  <div class="col-md-6 gap-1">
       <h2><strong>Цена</strong></h2>
       <hr class="hr">
       <h4>Изберете цена от - до</h4>
-
+      <!--SLIDER-->
       <div id="slider" (click)="getPrice();filter()"></div>
-      <p>
-        <input type="text" id="amountMin" readonly>
-        <input type="text" id="amountMax" readonly>
+      <p>{{P}}
+        <input type="text" id="amountMin" size="2" readonly>{{delimiter}}
+        <input type="text" id="amountMax" size="2" readonly>
       </p>
-    </div>
-
+      <!--SLIDER-->
   </div>
 
-  <div class="col-md-6">
+  <div class="col-md-6 gap-2">
     <h2><strong>Рейтинг</strong></h2>
     <hr class="hr">
     <h4>Изберете рейтинг</h4>
@@ -61,5 +61,5 @@
 </div>
 
 
-<result [books]="booksResult"></result>
+<result [books]="booksResult" [count]="count"></result>
 

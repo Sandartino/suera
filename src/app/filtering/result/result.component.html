@@ -1,11 +1,18 @@
-<div>
-  <h1>Резултати</h1>
+<div class="row">
 
-  <div class="img-container">
-    <div *ngFor="let book of books">
-      <img  src="http://via.placeholder.com/130x140">
-      <p>Цена:{{book.price}} Рейтинг:{{book.rate}}</p>
+  <div class="col-md-12">
+    <h2><strong>Резултати</strong></h2>
+    <hr class="hr">
+    <h4>{{count}}</h4>
+
+    <result-detail></result-detail>
+
+    <div class="img-container">
+      <div *ngFor="let book of books">
+        <img src="./assets/img/{{book.genre}}.gif">
+        <p class="result">Цена:<span>{{book.price}}</span> Рейтинг:<span>{{book.rate}}</span></p>
+      </div>
     </div>
   </div>
-  <hr class="hr">
+
 </div>

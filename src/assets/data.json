@@ -22,19 +22,19 @@
   {"price":10, "rate":3, "genre":"Романи"},
   {"price":90, "rate":5, "genre":"Романи"},
 
-  {"price":10, "rate":1, "genre":"Художествена лит."},
-  {"price":100, "rate":2, "genre":"Художествена лит."},
-  {"price":40, "rate":1, "genre":"Художествена лит."},
-  {"price":10, "rate":3, "genre":"Художествена лит."},
-  {"price":90, "rate":5, "genre":"Художествена лит."},
+  {"price":10, "rate":1, "genre":"Литература"},
+  {"price":100, "rate":2, "genre":"Литература"},
+  {"price":40, "rate":1, "genre":"Литература"},
+  {"price":10, "rate":3, "genre":"Литература"},
+  {"price":90, "rate":5, "genre":"Литература"},
 
-  {"price":10, "rate":1, "genre":"Исторически"},
-  {"price":100, "rate":2, "genre":"Исторически"},
-  {"price":40, "rate":1,"genre":"Исторически"},
-  {"price":10, "rate":3, "genre":"Исторически"},
-  {"price":90, "rate":5, "genre":"Исторически"},
+  {"price":10, "rate":1, "genre":"История"},
+  {"price":100, "rate":2, "genre":"История"},
+  {"price":40, "rate":1,"genre":"История"},
+  {"price":10, "rate":3, "genre":"История"},
+  {"price":90, "rate":5, "genre":"История"},
 
-  {"price":10, "rate":1, "genre":"Научна лит."},
-  {"price":100, "rate":2, "genre":"Научна лит."},
-  {"price":40, "rate":1, "genre":"Научна лит."}
+  {"price":10, "rate":1, "genre":"Наука"},
+  {"price":100, "rate":2, "genre":"Наука"},
+  {"price":40, "rate":1, "genre":"Наука"}
 ]

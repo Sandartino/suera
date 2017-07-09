@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {DataService} from "../data.service";
-import {forEach} from "@angular/router/src/utils/collection";
-// import * as jQuery from './@types/jquery';
+import {DataService}       from "../data.service";
 declare var $: any;
+// import * as jQuery from './@types/jquery';
 
 @Component({
   selector: 'filtering',
@@ -10,13 +9,15 @@ declare var $: any;
   styleUrls: ['./filtering.component.css']
 })
 export class FilteringComponent implements OnInit {
-  selectedGenre = [];
-  // imageUrl:string;
   booksResult = [];
+  selectedGenre = [];
   rate: number;
+  price:number[];
   rateActive: boolean = false;
   priceActive: boolean = false;
-  price:number[];
+  delimiter = "";
+  count = "0 резултата";
+  P = "0 лв. - 200 лв.";
 
   constructor(private dataServices: DataService) {
   }
@@ -30,9 +31,9 @@ export class FilteringComponent implements OnInit {
     {title: 'Драма'},
     {title: 'Трилър'},
     {title: 'Романи'},
-    {title: 'Художествена лит.'},
-    {title: 'Исторически'},
-    {title: 'Научна лит.'}
+    {title: 'Литература'},
+    {title: 'История'},
+    {title: 'Наука'}
   ];
 
   filter(value: string) {
@@ -45,23 +46,26 @@ export class FilteringComponent implements OnInit {
 
     this.dataServices.getJSON(this.selectedGenre, this.rate, this.price, this.rateActive, this.priceActive).subscribe(
       respond => {
-        this.booksResult = respond
+        this.booksResult = respond;
+        this.count = this.booksResult.length.toString() + ' резултата';
+
       }
     )
-
   }
 
   getRate(element) {
     this.rate = Number(element.getAttribute("data-rate"));
     this.rateActive = true;
-
   }
 
 
   getPrice() {
     this.price = $("#slider").slider("option", "values");
     this.priceActive = true;
-
+      if(this.priceActive){
+        this.delimiter = "-";
+        this.P = '';
+      }
   }
 
   slider_jq_ui() {
@@ -69,14 +73,12 @@ export class FilteringComponent implements OnInit {
       range: true,
       min: 0,
       max: 200,
-      step:10,
-      values: [10, 190],
+      values: [0, 200],
       slide: function (event, ui) {
         $("#amountMin").val(ui.values[0] + " лв.");
         $("#amountMax").val(ui.values[1] + " лв.");
       }
     });
-    /*$( "#amount" ).val(ui.values[ 0 ] + " лв." + "     " +ui.values[ 1 ] + " лв.");*/
   }
 
 

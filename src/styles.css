@@ -1,9 +1,9 @@
 div.row {
   background-color: #eeeeee;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
-hr.hr{
+hr.hr {
   display: block;
   height: 1px;
   border: 0;
@@ -13,6 +13,13 @@ hr.hr{
   width: 150px;
 }
 
-div.col-md-6{
-  border: 1px solid black;
+.ui-widget-header {
+  background-color: #5CB85C !important;
 }
+
+.ui-slider .ui-slider-handle {
+  width: 0 !important;
+  height: 0 !important;
+  display: none;
+}
+

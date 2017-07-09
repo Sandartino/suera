@@ -7,6 +7,7 @@
   float: right;
   margin-top: 5px;
 }
-hr{
-  border-top: 1px solid black;
+.row{
+  padding-bottom: 15px;
+  padding-top: 5px;
 }

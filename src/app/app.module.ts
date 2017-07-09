@@ -7,7 +7,9 @@ import { HeaderComponent } from './header/header.component';
 import { FilteringComponent } from './filtering/filtering.component';
 import { FilteringDirective } from './filtering/filtering.directive';
 import { ResultComponent } from './filtering/result/result.component';
-import { DataService } from './data.service'
+import { DataService } from './data.service';
+import { ResultDetailComponent } from './filtering/result/result-detail.component';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { DataService } from './data.service'
     HeaderComponent,
     FilteringComponent,
     FilteringDirective,
-    ResultComponent
+    ResultComponent,
+    ResultDetailComponent
   ],
   imports: [
     BrowserModule,
