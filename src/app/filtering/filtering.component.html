@@ -12,7 +12,7 @@
               *ngFor="let genre of genres"
               [attr.data-genre]="genre.title">
         {{genre.title}} &nbsp;
-        <img src="./assets/img/cross.png">
+        <!--<img src="./assets/img/cross.png">-->
       </button>
       <!--GENRES-->
     </div>
@@ -23,16 +23,16 @@
 <div class="row no-bg-color">
 
   <div class="col-md-6 gap-1">
-      <h2><strong>Цена</strong></h2>
-      <hr class="hr">
-      <h4>Изберете цена от - до</h4>
-      <!--SLIDER-->
-      <div id="slider" (click)="getPrice();filter()"></div>
-      <p>{{P}}
-        <input type="text" id="amountMin" size="2" readonly>{{delimiter}}
-        <input type="text" id="amountMax" size="2" readonly>
-      </p>
-      <!--SLIDER-->
+    <h2><strong>Цена</strong></h2>
+    <hr class="hr">
+    <h4>Изберете цена от - до</h4>
+    <!--SLIDER-->
+    <div id="slider" (click)="getPrice();filter()"></div>
+    <p>{{P}}
+      <input type="text" id="amountMin" size="2" readonly>{{delimiter}}
+      <input type="text" id="amountMax" size="2" readonly>
+    </p>
+    <!--SLIDER-->
   </div>
 
   <div class="col-md-6 gap-2">
@@ -59,7 +59,6 @@
   </div>
 
 </div>
-
 
 <result [books]="booksResult" [count]="count"></result>
 

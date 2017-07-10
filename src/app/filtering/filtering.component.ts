@@ -12,7 +12,7 @@ export class FilteringComponent implements OnInit {
   booksResult = [];
   selectedGenre = [];
   rate: number;
-  price:number[];
+  price: number[];
   rateActive: boolean = false;
   priceActive: boolean = false;
   delimiter = "";
@@ -37,6 +37,7 @@ export class FilteringComponent implements OnInit {
   ];
 
   filter(value: string) {
+
     let index = this.selectedGenre.indexOf(value);
     if (index > -1) {
       this.selectedGenre.splice(index, 1);
@@ -48,7 +49,6 @@ export class FilteringComponent implements OnInit {
       respond => {
         this.booksResult = respond;
         this.count = this.booksResult.length.toString() + ' резултата';
-
       }
     )
   }
@@ -62,10 +62,10 @@ export class FilteringComponent implements OnInit {
   getPrice() {
     this.price = $("#slider").slider("option", "values");
     this.priceActive = true;
-      if(this.priceActive){
-        this.delimiter = "-";
-        this.P = '';
-      }
+    if (this.priceActive) {
+      this.delimiter = "-";
+      this.P = '';
+    }
   }
 
   slider_jq_ui() {
@@ -73,6 +73,7 @@ export class FilteringComponent implements OnInit {
       range: true,
       min: 0,
       max: 200,
+      step:10,
       values: [0, 200],
       slide: function (event, ui) {
         $("#amountMin").val(ui.values[0] + " лв.");

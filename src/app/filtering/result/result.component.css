@@ -14,13 +14,15 @@ div.img-container img {
 
 .result span {
   font-size: 18px;
-  font-weight: 600;
+  /*font-weight: 600;*/
 }
 
 .rating {
   unicode-bidi: bidi-override;
   direction: rtl;
 }
+
+
 
 .rating > span {
   display: inline-block;

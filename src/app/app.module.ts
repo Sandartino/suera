@@ -1,15 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpModule, JsonpModule }    from '@angular/http';
+import {BrowserModule}            from '@angular/platform-browser';
+import {NgModule}                 from '@angular/core';
+import {HttpModule, JsonpModule}  from '@angular/http';
 
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FilteringComponent } from './filtering/filtering.component';
-import { FilteringDirective } from './filtering/filtering.directive';
-import { ResultComponent } from './filtering/result/result.component';
-import { DataService } from './data.service';
-import { ResultDetailComponent } from './filtering/result/result-detail.component';
-
+import {AppComponent}          from './app.component';
+import {HeaderComponent}       from './header/header.component';
+import {FilteringComponent}    from './filtering/filtering.component';
+import {FilteringDirective}    from './filtering/filtering.directive';
+import {ResultComponent}       from './filtering/result/result.component';
+import {DataService}           from './data.service';
+import {ResultDetailComponent} from './filtering/result/result-detail.component';
 
 @NgModule({
   declarations: [
@@ -28,5 +27,6 @@ import { ResultDetailComponent } from './filtering/result/result-detail.componen
   providers: [DataService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
 
