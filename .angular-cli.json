@@ -21,16 +21,13 @@
       "styles": [
         "styles.css",
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "../node_modules/jquery-ui-dist/jquery-ui.min.css",
-        "../node_modules/ion-rangeslider/css/ion.rangeSlider.css",
-        "../node_modules/ion-rangeslider/css/ion.rangeSlider.skinModern.css"
+        "../node_modules/jquery-ui-dist/jquery-ui.min.css"
 
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",
         "../node_modules/jquery-ui-dist/jquery-ui.min.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
-        "../node_modules/ion-rangeslider/js/ion.rangeSlider.min.js"
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

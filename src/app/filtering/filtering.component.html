@@ -27,7 +27,7 @@
     <hr class="hr">
     <h4>Изберете цена от - до</h4>
     <!--SLIDER-->
-    <div id="slider" (click)="getPrice();filter()"></div>
+    <div id="slider" (click)="getPrice();filter($event)"></div>
     <p>{{P}}
       <input type="text" id="amountMin" size="2" readonly>{{delimiter}}
       <input type="text" id="amountMax" size="2" readonly>
@@ -40,19 +40,19 @@
     <hr class="hr">
     <h4>Изберете рейтинг</h4>
     <div class="stars">
-      <input (click)="getRate($event.target);filter()" [attr.data-rate]="5" class="star star-5" id="star-5" type="radio"
+      <input (click)="getRate($event);filter($event)" [attr.data-rate]="5" class="star star-5" id="star-5" type="radio"
              name="star"/>
       <label class="star star-5" for="star-5"></label>
-      <input (click)="getRate($event.target);filter()" [attr.data-rate]="4" class="star star-4" id="star-4" type="radio"
+      <input (click)="getRate($event);filter($event)" [attr.data-rate]="4" class="star star-4" id="star-4" type="radio"
              name="star"/>
       <label class="star star-4" for="star-4"></label>
-      <input (click)="getRate($event.target);filter()" [attr.data-rate]="3" class="star star-3" id="star-3" type="radio"
+      <input (click)="getRate($event);filter($event)" [attr.data-rate]="3" class="star star-3" id="star-3" type="radio"
              name="star"/>
       <label class="star star-3" for="star-3"></label>
-      <input (click)="getRate($event.target);filter()" [attr.data-rate]="2" class="star star-2" id="star-2" type="radio"
+      <input (click)="getRate($event);filter($event)" [attr.data-rate]="2" class="star star-2" id="star-2" type="radio"
              name="star"/>
       <label class="star star-2" for="star-2"></label>
-      <input (click)="getRate($event.target);filter()" [attr.data-rate]="1" class="star star-1" id="star-1" type="radio"
+      <input (click)="getRate($event);filter($event)" [attr.data-rate]="1" class="star star-1" id="star-1" type="radio"
              name="star"/>
       <label class="star star-1" for="star-1"></label>
     </div>

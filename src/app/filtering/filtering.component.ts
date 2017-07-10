@@ -54,7 +54,7 @@ export class FilteringComponent implements OnInit {
   }
 
   getRate(element) {
-    this.rate = Number(element.getAttribute("data-rate"));
+    this.rate = Number(element.target.getAttribute("data-rate"));
     this.rateActive = true;
   }
 
