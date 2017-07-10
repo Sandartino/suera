@@ -10,6 +10,4 @@ export class ResultComponent{
   @Input() books;
   @Input() count;
 
-  //booksDetail = this.books
-
 }
