@@ -9,6 +9,7 @@ import {FilteringDirective}    from './filtering/filtering.directive';
 import {ResultComponent}       from './filtering/result/result.component';
 import {DataService}           from './data.service';
 import {ResultDetailComponent} from './filtering/result/result-detail.component';
+import {NouisliderModule}      from "ng2-nouislider"
 
 @NgModule({
   declarations: [
@@ -17,12 +18,13 @@ import {ResultDetailComponent} from './filtering/result/result-detail.component'
     FilteringComponent,
     FilteringDirective,
     ResultComponent,
-    ResultDetailComponent
+    ResultDetailComponent,
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    JsonpModule
+    JsonpModule,
+    NouisliderModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

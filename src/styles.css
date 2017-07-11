@@ -17,9 +17,10 @@ hr.hr {
   background-color: #5CB85C !important;
 }
 
-/*.ui-slider .ui-slider-handle {*/
-  /*width: 0 !important;*/
-  /*height: 0 !important;*/
-  /*display: none;*/
-/*}*/
+.noUi-connect{
+  background: #5CB85C!important;
+}
+.noUi-horizontal{
+  width:85%;
+}
 

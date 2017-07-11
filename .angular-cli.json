@@ -21,13 +21,15 @@
       "styles": [
         "styles.css",
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "../node_modules/jquery-ui-dist/jquery-ui.min.css"
-
+        "../node_modules/jquery-ui-dist/jquery-ui.min.css",
+        "../node_modules/nouislider/distribute/nouislider.min.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",
         "../node_modules/jquery-ui-dist/jquery-ui.min.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
+        "../node_modules/nouislider/distribute/nouislider.min.js",
+        "../node_modules/ng2-nouislider/src/nouislider.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

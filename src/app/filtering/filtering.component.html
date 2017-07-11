@@ -27,12 +27,16 @@
     <hr class="hr">
     <h4>Изберете цена от - до</h4>
     <!--SLIDER-->
-    <div id="slider" (click)="getPrice();filter($event)"></div>
-    <p>{{P}}
-      <input type="text" id="amountMin" size="2" readonly>{{delimiter}}
-      <input type="text" id="amountMax" size="2" readonly>
-    </p>
+    <!--<div id="slider" (click)="getPrice();filter($event)"></div>-->
+    <!--<p>{{P}}-->
+    <!--<input type="text" id="amountMin" size="2" readonly>{{delimiter}}-->
+    <!--<input type="text" id="amountMax" size="2" readonly>-->
+    <!--</p>-->
     <!--SLIDER-->
+
+    <nouislider [connect]="true" [min]="0" [max]="200" [step]="10" [(ngModel)]="initialPrice"
+                (change)="getPrice($event);filter($event)"></nouislider>
+    <strong>{{from}}.лв - {{to}}.лв</strong>
   </div>
 
   <div class="col-md-6 gap-2">
@@ -61,4 +65,5 @@
 </div>
 
 <result [books]="booksResult" [count]="count"></result>
+
 

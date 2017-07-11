@@ -1,5 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
-import {FilteringComponent} from "./filtering/filtering.component";
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +6,5 @@ import {FilteringComponent} from "./filtering/filtering.component";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  // @ViewChild(FilteringComponent) genres;
-  //
-  //
-  // ngOnChanges(){
-  //   console.log(this.genres.selectedGenre)
-  // }
 
 }

@@ -1,5 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild, ElementRef, Renderer2} from '@angular/core';
 import {DataService}       from "../data.service";
+import * as noUiSlider from 'nouislider';
+import {NouisliderModule} from 'ng2-nouislider';
+import nouislider from 'nouislider';
 declare var $: any;
 // import * as jQuery from './@types/jquery';
 
@@ -7,6 +10,7 @@ declare var $: any;
   selector: 'filtering',
   templateUrl: './filtering.component.html',
   styleUrls: ['./filtering.component.css']
+
 })
 export class FilteringComponent implements OnInit {
   booksResult = [];
@@ -15,15 +19,19 @@ export class FilteringComponent implements OnInit {
   price: number[];
   rateActive: boolean = false;
   priceActive: boolean = false;
-  delimiter = "";
+  // delimiter = "";
   count = "0 резултата";
-  P = "0 лв. - 200 лв.";
+  // P = "0 лв. - 200 лв.";
 
-  constructor(private dataServices: DataService) {
+  @ViewChild('slider') slider: ElementRef;
+
+  constructor(private dataServices: DataService, private renderer: Renderer2, private element: ElementRef) {
+
   }
 
   ngOnInit() {
-    this.slider_jq_ui()
+    // this.slider_jq_ui()
+
   }
 
   genres = [
@@ -37,7 +45,6 @@ export class FilteringComponent implements OnInit {
   ];
 
   filter(value: string) {
-
     let index = this.selectedGenre.indexOf(value);
     if (index > -1) {
       this.selectedGenre.splice(index, 1);
@@ -58,29 +65,36 @@ export class FilteringComponent implements OnInit {
     this.rateActive = true;
   }
 
+  initialPrice: number[] = [1, 199];
+  from = this.initialPrice[0];
+  to = this.initialPrice[1];
 
-  getPrice() {
-    this.price = $("#slider").slider("option", "values");
+  getPrice(price: number[]) {
+    // this.price = $("#slider").slider("option", "values");
     this.priceActive = true;
-    if (this.priceActive) {
-      this.delimiter = "-";
-      this.P = '';
-    }
+    this.price = price;
+    this.from = price[0];
+    this.to = price[1];
+    // if (this.priceActive) {
+    //   this.delimiter = "-";
+    //   this.P = '';
+    // }
+
   }
 
-  slider_jq_ui() {
-    $("#slider").slider({
-      range: true,
-      min: 0,
-      max: 200,
-      step:10,
-      values: [0, 200],
-      slide: function (event, ui) {
-        $("#amountMin").val(ui.values[0] + " лв.");
-        $("#amountMax").val(ui.values[1] + " лв.");
-      }
-    });
-  }
+  /* slider_jq_ui() {
+   $("#slider").slider({
+   range: true,
+   min: 0,
+   max: 200,
+   step:10,
+   values: [0, 200],
+   slide: function (event, ui) {
+   $("#amountMin").val(ui.values[0] + " лв.");
+   $("#amountMax").val(ui.values[1] + " лв.");
+   }
+   });
+   }*/
 
 
 }
