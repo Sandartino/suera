@@ -3,6 +3,7 @@
   <div class="col-md-12">
     <h2><strong>Жанр</strong></h2>
     <hr class="hr">
+    <div style="clear: both;"></div>
     <h4>Кликнете на един или повече жанрове за да ги изберете</h4>
     <div class="genre-buttons">
       <!--GENRES-->
@@ -12,7 +13,7 @@
               *ngFor="let genre of genres"
               [attr.data-genre]="genre.title">
         {{genre.title}} &nbsp;
-        <!--<img src="./assets/img/cross.png">-->
+        <img cross src="./assets/img/cross.png">
       </button>
       <!--GENRES-->
     </div>
@@ -21,21 +22,25 @@
 </div>
 
 <div class="row no-bg-color">
-    <!--PRICE-->
+  <!--PRICE-->
   <div class="col-md-6 gap-1">
     <h2><strong>Цена</strong></h2>
     <hr class="hr">
+    <div style="clear: both;"></div>
     <h4>Изберете цена от - до</h4>
+    <p style="margin-top: 25px">
+      <nouislider [connect]="true" [min]="0" [max]="200" [step]="10" [(ngModel)]="initialPrice"
+                  (change)="getPrice($event);filter($event)"></nouislider>
+      <strong>{{from}} .лв - {{to}} .лв</strong>
+    </p>
 
-    <nouislider [connect]="true" [min]="0" [max]="200" [step]="10" [(ngModel)]="initialPrice"
-                (change)="getPrice($event);filter($event)"></nouislider>
-    <strong>{{from}} .лв - {{to}} .лв</strong>
   </div>
   <!--PRICE-->
 
   <div class="col-md-6 gap-2">
     <h2><strong>Рейтинг</strong></h2>
     <hr class="hr">
+    <div style="clear: both;"></div>
     <h4>Изберете рейтинг</h4>
     <div class="stars">
       <input (click)="getRate($event);filter($event)" [attr.data-rate]="5" class="star star-5" id="star-5" type="radio"

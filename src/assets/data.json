@@ -13,7 +13,6 @@
   {"price":70, "rate":3, "genre":"Драма"},
   {"price":110, "rate":4, "genre":"Драма"},
   {"price":130, "rate":5, "genre":"Драма"},
-  {"price":140, "rate":2, "genre":"Драма"},
 
   {"price":10, "rate":1, "genre":"Трилър"},
   {"price":40, "rate":5, "genre":"Трилър"},
@@ -22,6 +21,7 @@
   {"price":70, "rate":4, "genre":"Трилър"},
   {"price":80, "rate":5, "genre":"Трилър"},
   {"price":150, "rate":3, "genre":"Трилър"},
+  {"price":120, "rate":1, "genre":"Трилър"},
 
   {"price":10, "rate":1, "genre":"Романи"},
   {"price":10, "rate":2, "genre":"Романи"},
@@ -36,7 +36,6 @@
   {"price":20, "rate":2, "genre":"Литература"},
   {"price":50, "rate":3, "genre":"Литература"},
   {"price":60, "rate":4, "genre":"Литература"},
-  {"price":100, "rate":5, "genre":"Литература"},
   {"price":160, "rate":5, "genre":"Литература"},
 
   {"price":10, "rate":1, "genre":"История"},
@@ -50,7 +49,6 @@
   {"price":10, "rate":1, "genre":"Наука"},
   {"price":10, "rate":5, "genre":"Наука"},
   {"price":30, "rate":2, "genre":"Наука"},
-  {"price":40, "rate":3, "genre":"Наука"},
   {"price":80, "rate":4, "genre":"Наука"},
   {"price":100, "rate":5, "genre":"Наука"},
   {"price":150, "rate":2, "genre":"Наука"}

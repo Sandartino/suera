@@ -30,10 +30,8 @@ color:Color = new Color();
       count[i] = (count[i] || 0) + 1;
     });
     for (let key in count) {
-      this.booksDetail.push({"genre": key, "count": count[key]})
-      // console.log(this.booksDetail[this.booksDetail.length-1])
-
-      console.log( this.color.setColor = this.booksDetail[this.booksDetail.length-1])
+      this.booksDetail.push({"genre": key, "count": count[key]});
+      this.color.setColor = this.booksDetail[this.booksDetail.length-1]
     }
 
     return this.booksDetail

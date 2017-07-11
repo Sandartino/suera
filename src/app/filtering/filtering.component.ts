@@ -1,12 +1,11 @@
-import {Component, ViewChild, ElementRef} from '@angular/core';
+import {Component} from '@angular/core';
 import {DataService}       from "../data.service";
-import * as noUiSlider from 'nouislider';
-import nouislider from 'nouislider';
 
 @Component({
   selector: 'filtering',
   templateUrl: './filtering.component.html',
   styleUrls: ['./filtering.component.css']
+ 
 
 })
 export class FilteringComponent {
@@ -18,10 +17,7 @@ export class FilteringComponent {
   priceActive: boolean = false;
   count:number;
 
-  @ViewChild('slider') slider: ElementRef;
-
   constructor(private dataServices: DataService) {
-
   }
 
   genres = [
@@ -65,6 +61,5 @@ export class FilteringComponent {
     this.from = price[0];
     this.to = price[1];
   }
-
 
 }

@@ -12,7 +12,7 @@ button.btn.btn-sm {
 }
 
 .gap-1 {
-  min-height: 185px
+  min-height: 180px
 }
 
 .gap-2 {
@@ -35,8 +35,8 @@ div.col-md-6 {
 /*STARS REITING*/
 /*http://www.cssscript.com/simple-5-star-rating-system-with-css-and-html-radios/*/
 div.stars {
-  width: 270px;
-  display: inline-block;
+  width: 50%;
+  margin: 0 auto;
 }
 
 input.star {
@@ -74,8 +74,18 @@ label.star:before {
 }
 
 @media (max-width: 1200px) {
+  div.gap-1 {
+    width: 100%;
+  }
 
   div.gap-2 {
     margin-top: 8px;
+    margin-left: 0;
+    width: 100%;
+    display: inline-block !important;
+  }
+
+  div.stars {
+    width: 40%;
   }
 }
