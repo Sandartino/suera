@@ -21,23 +21,17 @@
 </div>
 
 <div class="row no-bg-color">
-
+    <!--PRICE-->
   <div class="col-md-6 gap-1">
     <h2><strong>Цена</strong></h2>
     <hr class="hr">
     <h4>Изберете цена от - до</h4>
-    <!--SLIDER-->
-    <!--<div id="slider" (click)="getPrice();filter($event)"></div>-->
-    <!--<p>{{P}}-->
-    <!--<input type="text" id="amountMin" size="2" readonly>{{delimiter}}-->
-    <!--<input type="text" id="amountMax" size="2" readonly>-->
-    <!--</p>-->
-    <!--SLIDER-->
 
     <nouislider [connect]="true" [min]="0" [max]="200" [step]="10" [(ngModel)]="initialPrice"
                 (change)="getPrice($event);filter($event)"></nouislider>
-    <strong>{{from}}.лв - {{to}}.лв</strong>
+    <strong>{{from}} .лв - {{to}} .лв</strong>
   </div>
+  <!--PRICE-->
 
   <div class="col-md-6 gap-2">
     <h2><strong>Рейтинг</strong></h2>

@@ -28,12 +28,6 @@ div.col-md-6 {
   background-color: #EEEEEE;
 }
 
-#amountMin, #amountMax {
-  border: 0;
-  font-weight: bold;
-  background-color: inherit;
-}
-
 .visible {
   display: none;
 }

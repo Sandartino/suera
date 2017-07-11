@@ -1,11 +1,11 @@
 <div class="row">
-  <div class="col-md-3">
+  <div class="col-md-2">
     <h2><strong>Резултати</strong></h2>
     <hr class="hr">
-    <h4>{{count}}</h4>
+    <h4><span *ngIf="count">общо:&nbsp;</span><span>{{count || 0}}</span></h4>
   </div>
 
-  <div class="col-md-9 ">
+  <div class="col-md-10">
 
     <result-detail [books]="books"></result-detail>
 
@@ -17,7 +17,7 @@
     <div class="img-container">
       <div *ngFor="let book of books">
         <img src="./assets/img/{{book.genre}}.gif">
-        <p class="result">Цена:<strong>{{book.price}}</strong> Рейтинг:<strong>{{book.rate}}</strong></p>
+        <p class="result-img">Цена:<strong>{{book.price}}</strong> Рейтинг:<strong>{{book.rate}}</strong></p>
       </div>
     </div>
   </div>

@@ -13,14 +13,13 @@ hr.hr {
   width: 150px;
 }
 
-.ui-widget-header {
-  background-color: #5CB85C !important;
+.noUi-horizontal{
+  width:85%;
+  margin-left: 15px;
 }
 
 .noUi-connect{
   background: #5CB85C!important;
 }
-.noUi-horizontal{
-  width:85%;
-}
+
 
