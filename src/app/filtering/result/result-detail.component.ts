@@ -7,18 +7,14 @@ import {Color}                       from './color';
   styleUrls: ['./result-detail.component.css']
 })
 export class ResultDetailComponent implements OnChanges {
-  @Input() books: object[];
+  @Input() books:object[];
+  color:Color = new Color();
   booksDetail:object[];
-
-
-  constructor() {
-  }
 
   ngOnChanges() {
     this.booksCount();
-    // console.log(this.booksDetail)
   }
-color:Color = new Color();
+
   booksCount() {
     let arr = [];
     this.booksDetail = [];
@@ -31,7 +27,7 @@ color:Color = new Color();
     });
     for (let key in count) {
       this.booksDetail.push({"genre": key, "count": count[key]});
-      this.color.setColor = this.booksDetail[this.booksDetail.length-1]
+      this.color.setColor = this.booksDetail[this.booksDetail.length - 1]
     }
 
     return this.booksDetail
