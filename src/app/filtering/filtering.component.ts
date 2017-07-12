@@ -5,8 +5,6 @@ import {DataService}       from "../data.service";
   selector: 'filtering',
   templateUrl: './filtering.component.html',
   styleUrls: ['./filtering.component.css']
- 
-
 })
 export class FilteringComponent {
   booksResult = [];
