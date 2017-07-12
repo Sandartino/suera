@@ -3,7 +3,7 @@ import {Directive, HostListener, HostBinding, Output, EventEmitter, ElementRef, 
 @Directive({
   selector: '[selectGenre]'
 })
-export class FilteringDirective implements OnInit {
+export class FilteringDirective implements OnInit{
   btnColor = "#c1c1c1";
   btnSelect = false;
 
@@ -17,15 +17,18 @@ export class FilteringDirective implements OnInit {
   @Output() selectedGenre:EventEmitter<string> = new EventEmitter<string>();
 
   @HostListener('click', ['$event.target']) selectGenre(element) {
-    this.btnSelect = !this.btnSelect;
-    if (this.btnSelect) {
-      element.style.backgroundColor = "#5cb85c";
-      this.elementRef.nativeElement.firstElementChild.style.display = "initial"
-    } else {
-      element.style.backgroundColor = "#c1c1c1";
-      this.elementRef.nativeElement.firstElementChild.style.display = "none"
+    if(element["localName"] !== "img"){
+      this.btnSelect = !this.btnSelect;
+      if (this.btnSelect) {
+        this.elementRef.nativeElement.firstElementChild.style.display = "initial";
+        element.style.backgroundColor = "#5cb85c";
+      } else {
+        this.elementRef.nativeElement.firstElementChild.style.display = "none";
+        element.style.backgroundColor = "#c1c1c1";
+      }
+      this.selectedGenre.emit(element.getAttribute('data-genre'));
     }
-    this.selectedGenre.emit(element.getAttribute('data-genre'));
+
   }
 
   @HostBinding('style.backgroundColor') get bgColor() {

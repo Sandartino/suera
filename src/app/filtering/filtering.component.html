@@ -13,7 +13,7 @@
               *ngFor="let genre of genres"
               [attr.data-genre]="genre.title">
         {{genre.title}} &nbsp;
-        <img cross src="./assets/img/cross.png">
+        <img src="./assets/img/cross.png">
       </button>
       <!--GENRES-->
     </div>
@@ -31,9 +31,8 @@
     <p style="margin-top: 25px">
       <nouislider [connect]="true" [min]="0" [max]="200" [step]="10" [(ngModel)]="initialPrice"
                   (change)="getPrice($event);filter($event)"></nouislider>
-      <strong>{{from}} .лв - {{to}} .лв</strong>
+      <strong>{{from}} лв - {{to}} лв</strong>
     </p>
-
   </div>
   <!--PRICE-->
 
